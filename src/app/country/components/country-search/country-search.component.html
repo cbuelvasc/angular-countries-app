@@ -1,0 +1,10 @@
+<form (ngSubmit)="search()" autocomplete="off" class="d-flex">
+  <input
+    class="form-control me-2"
+    type="search"
+    name="term"
+    [(ngModel)]="term"
+    (input)="pressKey()"
+    [placeholder]="placeholder"
+  />
+</form>

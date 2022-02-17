@@ -1,0 +1,22 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container-fluid">
+      <a class="navbar-brand">By Capital</a>
+      <app-country-search
+        (onEnter)="search($event)"
+        (onDebounce)="suggestion($event)"
+        [placeholder]="placeholder"
+      ></app-country-search>
+    </div>
+  </nav>
+</div>
+
+<div *ngIf="isError" class="alert alert-danger">
+  Nothing was found with the search term {{ term }}...!
+</div>
+
+<div *ngIf="countries.length > 0" class="row">
+  <div class="col">
+    <app-country-table [countries]="countries"></app-country-table>
+  </div>
+</div>

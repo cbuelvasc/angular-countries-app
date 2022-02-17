@@ -1,0 +1,25 @@
+<div class="animate__animated animate__fadeIn animate__faster">
+  <h3>
+    Search by region <small>{{ activeRegion }}</small>
+  </h3>
+
+  <h5>Select the region</h5>
+
+  <div class="row">
+    <div class="col">
+      <button
+        *ngFor="let region of regions"
+        [class]="getCSSClass(region)"
+        (click)="activateRegion(region)"
+      >
+        {{ region }}
+      </button>
+    </div>
+  </div>
+
+  <div *ngIf="countries.length > 0" class="row">
+    <div class="col">
+      <app-country-table [countries]="countries"></app-country-table>
+    </div>
+  </div>
+</div>
